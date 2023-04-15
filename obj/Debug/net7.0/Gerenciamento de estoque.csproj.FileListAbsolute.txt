@@ -1,0 +1,15 @@
+C:\Users\T460\Desktop\Gerenciamento de estoque\obj\Debug\net7.0\Gerenciamento de estoque.csproj.AssemblyReference.cache
+C:\Users\T460\Desktop\Gerenciamento de estoque\obj\Debug\net7.0\Gerenciamento de estoque.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\T460\Desktop\Gerenciamento de estoque\obj\Debug\net7.0\Gerenciamento de estoque.AssemblyInfoInputs.cache
+C:\Users\T460\Desktop\Gerenciamento de estoque\obj\Debug\net7.0\Gerenciamento de estoque.AssemblyInfo.cs
+C:\Users\T460\Desktop\Gerenciamento de estoque\obj\Debug\net7.0\Gerenciamento de estoque.csproj.CoreCompileInputs.cache
+C:\Users\T460\Desktop\Gerenciamento de estoque\bin\Debug\net7.0\Gerenciamento de estoque.exe
+C:\Users\T460\Desktop\Gerenciamento de estoque\bin\Debug\net7.0\Gerenciamento de estoque.deps.json
+C:\Users\T460\Desktop\Gerenciamento de estoque\bin\Debug\net7.0\Gerenciamento de estoque.runtimeconfig.json
+C:\Users\T460\Desktop\Gerenciamento de estoque\bin\Debug\net7.0\Gerenciamento de estoque.dll
+C:\Users\T460\Desktop\Gerenciamento de estoque\bin\Debug\net7.0\Gerenciamento de estoque.pdb
+C:\Users\T460\Desktop\Gerenciamento de estoque\obj\Debug\net7.0\Gerenciamento de estoque.dll
+C:\Users\T460\Desktop\Gerenciamento de estoque\obj\Debug\net7.0\refint\Gerenciamento de estoque.dll
+C:\Users\T460\Desktop\Gerenciamento de estoque\obj\Debug\net7.0\Gerenciamento de estoque.pdb
+C:\Users\T460\Desktop\Gerenciamento de estoque\obj\Debug\net7.0\Gerenciamento de estoque.genruntimeconfig.cache
+C:\Users\T460\Desktop\Gerenciamento de estoque\obj\Debug\net7.0\ref\Gerenciamento de estoque.dll
