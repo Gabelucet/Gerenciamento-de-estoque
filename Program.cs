@@ -4,6 +4,7 @@ namespace Gerenciamento_de_estoque
 {
     class Program
     {
-        static void Main(string[]args){}
+        static void Main(string[]args){
+        }
     }
 }
