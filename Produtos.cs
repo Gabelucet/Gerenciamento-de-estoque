@@ -14,19 +14,6 @@ class Produtos
     public double PrecoDoProduto { get; set; }
     List<Produtos> produtos = new List<Produtos>();
 
-   /* public Produtos(
-        string NomeDoProduto,
-        int CodigoDoProduto,
-        double PrecoDoProduto,
-        int QuantidadeNoEstoque
-    )
-    {
-        this.NomeDoProduto = NomeDoProduto;
-        this.CodigoDoProduto = CodigoDoProduto;
-        this.PrecoDoProduto = PrecoDoProduto;
-        this.QuantidadeNoEstoque = QuantidadeNoEstoque;
-    }*/
-
     /*Esse método está mostra para a minha classe e minha lista como deve mostrar os objetos na tela.
     Sem a definição do método ToString(), o C# não sabe como converter um objeto da classe Produtos em uma string para ser impressa no console. É por isso que você estava vendo apenas o nome completo da classe Produtos impresso na tela em vez dos detalhes do produto.
     Ao implementar o método ToString() dentro da classe Produtos, você está especificando como um objeto Produtos deve ser convertido em uma string para impressão no console. Com a implementação do método ToString(), agora quando você chama Console.WriteLine(item), o C# sabe como converter o objeto item em uma string que pode ser impressa no console com os detalhes do produto. */
