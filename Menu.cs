@@ -1,5 +1,7 @@
 class Menu
 {
+    
+
     Produtos MenuProdutos = new Produtos("1", 1, 1, 1);
 
     public void MenuGeral()
@@ -15,11 +17,11 @@ class Menu
         {
             case 1:
                 Thread.Sleep(1500);
-                Funcionario();
+                Cliente();
                 break;
             case 2:
                 Thread.Sleep(1500);
-                Cliente();
+                Funcionario();
                 break;
 
             default:
@@ -30,7 +32,7 @@ class Menu
         }
     }
 
-    public void Funcionario()
+    private void Funcionario()
     {
         Console.Clear();
         Console.WriteLine("Seja bem vindo :-)");
@@ -61,7 +63,7 @@ class Menu
         }
     }
 
-    public void Cliente() { }
+    private void Cliente() { }
 
     public void VoltarAoMenu()
     {
@@ -106,13 +108,12 @@ class Menu
                 System.Environment.Exit(0);
                 break;
             default:
-            Thread.Sleep(1000);
+                Thread.Sleep(1000);
                 Console.Clear();
                 Console.WriteLine("Escolha incorreta, encerrando o programa");
                 Thread.Sleep(1500);
-               System.Environment.Exit(0);
+                System.Environment.Exit(0);
                 break;
-
         }
     }
 }
