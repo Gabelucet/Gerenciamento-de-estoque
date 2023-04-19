@@ -7,7 +7,7 @@ namespace Gerenciamento_de_estoque
         static void Main(string[]args)
         {
             Console.Clear();
-            Produtos i = new Produtos("novo", 8, 98, 100);
+            Produtos i = new Produtos();
 
             i.CadastroDeProduto();
         }

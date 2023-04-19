@@ -12,8 +12,9 @@ class Produtos
     public string NomeDoProduto { get; set; }
     public int CodigoDoProduto { get; set; }
     public double PrecoDoProduto { get; set; }
+    List<Produtos> produtos = new List<Produtos>();
 
-    public Produtos(
+   /* public Produtos(
         string NomeDoProduto,
         int CodigoDoProduto,
         double PrecoDoProduto,
@@ -24,7 +25,7 @@ class Produtos
         this.CodigoDoProduto = CodigoDoProduto;
         this.PrecoDoProduto = PrecoDoProduto;
         this.QuantidadeNoEstoque = QuantidadeNoEstoque;
-    }
+    }*/
 
     /*Esse método está mostra para a minha classe e minha lista como deve mostrar os objetos na tela.
     Sem a definição do método ToString(), o C# não sabe como converter um objeto da classe Produtos em uma string para ser impressa no console. É por isso que você estava vendo apenas o nome completo da classe Produtos impresso na tela em vez dos detalhes do produto.
@@ -36,8 +37,6 @@ class Produtos
 
     public void CadastroDeProduto()
     {
-        List<Produtos> produtos = new List<Produtos>();
-
         string continuar = "s";
 
         while (continuar == "s")
@@ -55,17 +54,14 @@ class Produtos
             QuantidadeNoEstoque = int.Parse(Console.ReadLine());
 
             Produtos novosProdutos = new Produtos(
-                NomeDoProduto,
-                CodigoDoProduto,
-                PrecoDoProduto,
-                QuantidadeNoEstoque
+                
             );
             produtos.Add(novosProdutos);
 
             Console.Write("Deseja continuar:\nS - SIM\nN - NÃO\nR:");
             string resposta = Console.ReadLine();
 
-            continuar = resposta.ToString();
+            continuar = resposta.ToLower();
 
             if (continuar == "n")
             {
@@ -78,7 +74,10 @@ class Produtos
         }
     }
 
-    public void ListaDeProdutos() { }
+    public void ListaDeProdutos()
+    {
+        
+    }
 
     public void EdicaoDeProdutos() { }
 
