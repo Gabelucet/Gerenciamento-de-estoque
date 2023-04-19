@@ -14,6 +14,21 @@ class Produtos
     public double PrecoDoProduto { get; set; }
     List<Produtos> produtos = new List<Produtos>();
 
+
+     public Produtos(
+        string NomeDoProduto,
+        int CodigoDoProduto,
+        double PrecoDoProduto,
+        int QuantidadeNoEstoque
+    )
+    {
+        this.NomeDoProduto = NomeDoProduto;
+        this.CodigoDoProduto = CodigoDoProduto;
+        this.PrecoDoProduto = PrecoDoProduto;
+        this.QuantidadeNoEstoque = QuantidadeNoEstoque;
+    }
+    
+
     /*Esse método está mostra para a minha classe e minha lista como deve mostrar os objetos na tela.
     Sem a definição do método ToString(), o C# não sabe como converter um objeto da classe Produtos em uma string para ser impressa no console. É por isso que você estava vendo apenas o nome completo da classe Produtos impresso na tela em vez dos detalhes do produto.
     Ao implementar o método ToString() dentro da classe Produtos, você está especificando como um objeto Produtos deve ser convertido em uma string para impressão no console. Com a implementação do método ToString(), agora quando você chama Console.WriteLine(item), o C# sabe como converter o objeto item em uma string que pode ser impressa no console com os detalhes do produto. */
@@ -41,6 +56,11 @@ class Produtos
             QuantidadeNoEstoque = int.Parse(Console.ReadLine());
 
             Produtos novosProdutos = new Produtos(
+
+                NomeDoProduto,
+                CodigoDoProduto,
+                PrecoDoProduto,
+                QuantidadeNoEstoque
                 
             );
             produtos.Add(novosProdutos);
@@ -49,6 +69,7 @@ class Produtos
             string resposta = Console.ReadLine();
 
             continuar = resposta.ToLower();
+            Console.Clear();
 
             if (continuar == "n")
             {
@@ -63,7 +84,11 @@ class Produtos
 
     public void ListaDeProdutos()
     {
-        
+        Console.WriteLine("Os produtos atuais que temos no estoque são: ");
+        foreach (var item in produtos)
+        {
+            Console.WriteLine(item);
+        }
     }
 
     public void EdicaoDeProdutos() { }
