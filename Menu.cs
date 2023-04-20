@@ -2,7 +2,7 @@ class Menu
 {
     
 
-    Produtos MenuProdutos = new Produtos("1", 1, 1, 1);
+    Produtos MenuProdutos = new Produtos();
 
     public void MenuGeral()
     {

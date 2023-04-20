@@ -7,9 +7,9 @@ namespace Gerenciamento_de_estoque
         static void Main(string[]args)
         {
             Console.Clear();
-            Menu i = new Menu();
+            Produtos i = new Produtos();
 
-            i.MenuGeral();
+            i.CadastroDeProduto();
            
         }
     }
