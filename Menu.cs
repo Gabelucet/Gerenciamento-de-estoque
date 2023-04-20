@@ -39,6 +39,7 @@ class Menu
         Console.WriteLine("O que deseja fazer hoje? ");
         Console.WriteLine("1 - Cadastrar Novos produtos");
         Console.WriteLine("2 - Consultar lista de produtos");
+         Console.WriteLine("3 - Editar Produtos");
         Console.Write("R: ");
         int resposta = int.Parse(Console.ReadLine());
 
@@ -53,6 +54,11 @@ class Menu
                 Thread.Sleep(1500);
                 Console.Clear();
                 MenuProdutos.ListaDeProdutos();
+                break;
+            case 3:
+                Thread.Sleep(1500);
+                Console.Clear();
+                MenuProdutos.EdicaoDeProdutos();
                 break;
             default:
                 Thread.Sleep(1500);

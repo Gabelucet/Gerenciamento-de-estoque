@@ -11,7 +11,7 @@ class Produtos
 {
     public int QuantidadeNoEstoque { get; set; }
     public string NomeDoProduto { get; set; }
-    public int CodigoDoProduto { get; set; }
+    public int ID { get; set; }
     public double PrecoDoProduto { get; set; }
 
     public static List<Produtos> produtos = new List<Produtos>();
@@ -29,15 +29,12 @@ class Produtos
         this.QuantidadeNoEstoque = QuantidadeNoEstoque;
     }*/
 
-
-
-
     /*Esse método está mostra para a minha classe e minha lista como deve mostrar os objetos na tela.
     Sem a definição do método ToString(), o C# não sabe como converter um objeto da classe Produtos em uma string para ser impressa no console. É por isso que você estava vendo apenas o nome completo da classe Produtos impresso na tela em vez dos detalhes do produto.
     Ao implementar o método ToString() dentro da classe Produtos, você está especificando como um objeto Produtos deve ser convertido em uma string para impressão no console. Com a implementação do método ToString(), agora quando você chama Console.WriteLine(item), o C# sabe como converter o objeto item em uma string que pode ser impressa no console com os detalhes do produto. */
     public override string ToString()
     {
-        return $"Nome do produto: {NomeDoProduto}, Código: {CodigoDoProduto}, Preço: {PrecoDoProduto}, Quantidade em Estoque: {QuantidadeNoEstoque}";
+        return $"ID: {ID}, Nome do produto: {NomeDoProduto}, Preço: {PrecoDoProduto}, Quantidade em Estoque: {QuantidadeNoEstoque}";
     }
 
     public void CadastroDeProduto()
@@ -45,7 +42,7 @@ class Produtos
         Produtos novosProdutos = new Produtos
         {
             NomeDoProduto = "Gelo",
-            CodigoDoProduto = 001,
+            ID = 001,
             PrecoDoProduto = 3.99,
             QuantidadeNoEstoque = 999
         };
@@ -53,7 +50,7 @@ class Produtos
         Produtos novosProdutos1 = new Produtos
         {
             NomeDoProduto = "Água",
-            CodigoDoProduto = 002,
+            ID = 002,
             PrecoDoProduto = 2.99,
             QuantidadeNoEstoque = 99
         };
@@ -61,7 +58,7 @@ class Produtos
         Produtos novosProdutos2 = new Produtos
         {
             NomeDoProduto = "Cerveja",
-            CodigoDoProduto = 003,
+            ID = 003,
             PrecoDoProduto = 5.99,
             QuantidadeNoEstoque = 999
         };
