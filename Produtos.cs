@@ -135,8 +135,88 @@ class Produtos
         foreach (var item in produtos)
         {
             Console.WriteLine(item);
+            Console.WriteLine("\n");
         }
+
+        Console.WriteLine("Me informe o código do produto que deseja Editar");
+        Console.Write("R: ");
+        int resposta = int.Parse(Console.ReadLine());
+
+        Produtos produtoParaeditar = produtos.Find(p => p.ID == resposta);
+
+        Thread.Sleep(2000);
+        Console.Clear();
+
+        Console.WriteLine("Me informe o que deseja editar: ");
+        Console.WriteLine("1 - Para editar Preço do produto");
+        Console.WriteLine("2 - Para editar a quantidade em estoque");
+        Console.Write("R: ");
+        int escolha = int.Parse(Console.ReadLine());
+
+        switch (escolha)
+        {
+            case 1:
+                Thread.Sleep(1500);
+                Console.Clear();
+                Console.Write("Me informe o novo valor do produto: ");
+                double novoValor = double.Parse(Console.ReadLine());
+                produtoParaeditar.PrecoDoProduto = novoValor;
+                Console.WriteLine($"O valor foi alterado para R$ {novoValor}");
+                Console.WriteLine(produtoParaeditar);
+                Thread.Sleep(5000);
+                break;
+            case 2:
+                Thread.Sleep(1000);
+                Console.Clear();
+                Console.Write("Me informe a quantidade no estoque do produto: ");
+                int novaQuantidadeEstoque = int.Parse(Console.ReadLine());
+                produtoParaeditar.QuantidadeNoEstoque = novaQuantidadeEstoque;
+                Console.WriteLine($"A nova quantidade no estoque é {novaQuantidadeEstoque}");
+                Console.WriteLine(produtoParaeditar);
+                Thread.Sleep(5000);
+                break;
+            default:
+                Console.WriteLine("Opção invalida. Voltando ao Menu");
+                Thread.Sleep(1500);
+                Console.Clear();
+                break;
+        }
+
+        Menu novo = new Menu();
+        novo.VoltarAoMenu();
     }
 
-    public void ExclusaoDeProdutos() { }
+    public void ExclusaoDeProdutos()
+    {
+        foreach (var item in produtos)
+        {
+            Console.WriteLine(item);
+            Console.WriteLine("\n");
+        }
+
+        Console.WriteLine("Me informe o código do produto que deseja excluir");
+
+        int resposta = int.Parse(Console.ReadLine());
+
+        // encontra o produto correspondente ao ID informado
+        Produtos produtoParaExcluir = produtos.Find(p => p.ID == resposta);
+
+        if (produtoParaExcluir != null)
+        {
+            // remove o produto da lista
+            produtos.Remove(produtoParaExcluir);
+
+            Console.WriteLine("Produto excluído com sucesso!");
+        }
+        else
+        {
+            Console.WriteLine("Produto não encontrado. Nenhum produto foi excluído.");
+        }
+
+        foreach (var item in produtos)
+        {
+            Console.WriteLine(item);
+            Console.WriteLine("\n");
+        }
+    }
 }
