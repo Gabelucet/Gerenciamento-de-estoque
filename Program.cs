@@ -36,7 +36,7 @@ namespace Gerenciamento_de_estoque
             Produtos.produtos.Add(novosProdutos1);
             Produtos.produtos.Add(novosProdutos2);
 
-            Cliente i = new Cliente();
+            Venda i = new Venda();
             i.Compras();
         }
     }
