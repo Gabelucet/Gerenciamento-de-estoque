@@ -8,7 +8,7 @@ namespace Gerenciamento_de_estoque
         {
             Console.Clear();
             
-            Produtos novosProdutos = new Produtos
+            Produto novosProdutos = new Produto
             {
                 NomeDoProduto = "Gelo",
                 ID = 001,
@@ -16,7 +16,7 @@ namespace Gerenciamento_de_estoque
                 QuantidadeNoEstoque = 999
             };
 
-            Produtos novosProdutos1 = new Produtos
+            Produto novosProdutos1 = new Produto
             {
                 NomeDoProduto = "Água",
                 ID = 002,
@@ -24,7 +24,7 @@ namespace Gerenciamento_de_estoque
                 QuantidadeNoEstoque = 99
             };
 
-            Produtos novosProdutos2 = new Produtos
+            Produto novosProdutos2 = new Produto
             {
                 NomeDoProduto = "Cerveja",
                 ID = 003,
@@ -32,12 +32,12 @@ namespace Gerenciamento_de_estoque
                 QuantidadeNoEstoque = 999
             };
 
-            Produtos.produtos.Add(novosProdutos);
-            Produtos.produtos.Add(novosProdutos1);
-            Produtos.produtos.Add(novosProdutos2);
+            Produto.produtos.Add(novosProdutos);
+            Produto.produtos.Add(novosProdutos1);
+            Produto.produtos.Add(novosProdutos2);
 
-            Venda i = new Venda();
-            i.Compras();
+            Menu AcessoMenu = new Menu();
+            AcessoMenu.MenuGeral();
         }
     }
 }

@@ -1,7 +1,6 @@
-using System.Diagnostics;
-
 class Venda
 {
+    int  pausaDoPrograma = 2500;
     public void ConsultaCliente()
     {
         Console.Clear();
@@ -14,16 +13,16 @@ class Venda
         switch (resposta)
         {
             case 1:
-                Thread.Sleep(1500);
+                Thread.Sleep(pausaDoPrograma);
                 ConsultaPorCodigo();
                 break;
             case 2:
-                Thread.Sleep(1500);
+                Thread.Sleep(pausaDoPrograma);
                 ConsultaPorNome();
                 break;
             default:
                 Console.WriteLine("Opção Invalida. Voltando para o Menu");
-                Thread.Sleep(1200);
+                Thread.Sleep(pausaDoPrograma);
                 break;
         }
     }
@@ -34,7 +33,7 @@ class Venda
         Console.Write("Me informe o código do produto que deseja: ");
         int resposta = int.Parse(Console.ReadLine());
 
-        Produtos produtoParaExibir = Produtos.produtos.Find(p => p.ID == resposta);
+        Produto produtoParaExibir = Produto.produtos.Find(p => p.ID == resposta);
         if (produtoParaExibir != null)
         {
             Console.WriteLine(
@@ -47,13 +46,15 @@ class Venda
                 "Produto não encontrado. Vamos mostrar as informações de todos os produtos\n"
             );
 
-            foreach (var item in Produtos.produtos)
+            foreach (var item in Produto.produtos)
             {
                 Console.WriteLine(item);
                 Console.WriteLine("---------------------");
             }
         }
-        Thread.Sleep(2500);
+        Thread.Sleep(pausaDoPrograma);
+        Console.WriteLine("Aperte uma tecla para pode voltar ao Menu");
+        Console.ReadKey();
         Menu novo = new Menu();
         novo.VoltarAoMenu();
     }
@@ -64,7 +65,7 @@ class Venda
         Console.Write("Me informe o nome do produto que deseja: ");
         string resposta = Console.ReadLine();
 
-        Produtos produtoParaExibir = Produtos.produtos.Find(p => p.NomeDoProduto == resposta);
+        Produto produtoParaExibir = Produto.produtos.Find(p => p.NomeDoProduto == resposta);
         if (produtoParaExibir != null)
         {
             Console.WriteLine(
@@ -77,13 +78,15 @@ class Venda
                 "Produto não encontrado. Vamos mostrar as informações de todos os produtos\n"
             );
 
-            foreach (var item in Produtos.produtos)
+            foreach (var item in Produto.produtos)
             {
                 Console.WriteLine(item);
                 Console.WriteLine("---------------------");
             }
         }
-        Thread.Sleep(2500);
+        Thread.Sleep(pausaDoPrograma);
+        Console.WriteLine("Aperte uma tecla para pode voltar ao Menu");
+        Console.ReadKey();
         Menu novo = new Menu();
         novo.VoltarAoMenu();
     }
@@ -92,38 +95,48 @@ class Venda
     {
         Console.Clear();
 
+        Console.WriteLine("Esse são os produtos que temos hoje: \n");
+        foreach (var item in Produto.produtos)
+        {
+            Console.WriteLine(item);
+
+            Console.WriteLine("---------------------");
+        }
+
         Console.Write("Me informe o código do produto que deseja comprar: ");
         int resposta = int.Parse(Console.ReadLine());
         Console.Write("Me informe a quantidade que deseja comprar: ");
         int quantidadeDeProdutos = int.Parse(Console.ReadLine());
 
-        Produtos CompraDeProduto = Produtos.produtos.Find(p => p.ID == resposta);
+        Produto CompraDeProduto = Produto.produtos.Find(p => p.ID == resposta);
 
         if (CompraDeProduto != null)
         {
-            Thread.Sleep(2000);
+            Thread.Sleep(pausaDoPrograma);
             Console.Clear();
             double valorTotalDaCompra = quantidadeDeProdutos * CompraDeProduto.PrecoDoProduto;
             Console.WriteLine(
-                $"O produto que deseja comprar é {CompraDeProduto.NomeDoProduto}\nO valor do produto é R$ {CompraDeProduto.PrecoDoProduto}. Como você comprou {quantidadeDeProdutos}, o valor total da compra deu R$ {valorTotalDaCompra}");
+                $"O produto que deseja comprar é {CompraDeProduto.NomeDoProduto}\nO valor do produto é R$ {CompraDeProduto.PrecoDoProduto}. Como você comprou {quantidadeDeProdutos}, o valor total da compra deu R$ {valorTotalDaCompra}"
+            );
 
-                Produtos quantidadeComprada = new Produtos();
-                quantidadeComprada.QuantidadeNoEstoque = CompraDeProduto.QuantidadeNoEstoque - quantidadeDeProdutos;
+            Produto quantidadeComprada = new Produto();
 
-                Console.WriteLine(quantidadeComprada.QuantidadeNoEstoque);
-
-               
+            CompraDeProduto.QuantidadeNoEstoque -= quantidadeDeProdutos;
         }
         else
         {
+            Thread.Sleep(pausaDoPrograma);
+            Console.Clear();
             Console.WriteLine("Produto não encontrado");
-            Console.WriteLine("Voltando para o inicio");
-            Thread.Sleep(2000);
+            Thread.Sleep(pausaDoPrograma);
+            Console.WriteLine("Aperte uma tecla para pode voltar ao Menu");
+            Console.ReadKey();
             Compras();
         }
 
-        Thread.Sleep(2500);
-        Console.WriteLine("Voltando para o Menu Inicial");
+        Thread.Sleep(pausaDoPrograma);
+        Console.WriteLine("Aperte uma tecla para pode voltar ao Menu");
+        Console.ReadKey();
         Menu novo = new Menu();
         novo.VoltarAoMenu();
     }
