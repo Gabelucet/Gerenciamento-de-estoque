@@ -115,8 +115,11 @@ class Venda
             Thread.Sleep(pausaDoPrograma);
             Console.Clear();
             double valorTotalDaCompra = quantidadeDeProdutos * CompraDeProduto.PrecoDoProduto;
+
+            string valorTotalDaCompraEditado = valorTotalDaCompra.ToString("0.00");
+
             Console.WriteLine(
-                $"O produto que deseja comprar é {CompraDeProduto.NomeDoProduto}\nO valor do produto é R$ {CompraDeProduto.PrecoDoProduto}. Como você comprou {quantidadeDeProdutos}, o valor total da compra deu R$ {valorTotalDaCompra}"
+                $"O produto que deseja comprar é {CompraDeProduto.NomeDoProduto}\nO valor do produto é R$ {CompraDeProduto.PrecoDoProduto}. Como você comprou {quantidadeDeProdutos}, o valor total da compra deu R$ {valorTotalDaCompraEditado}"
             );
 
             Produto quantidadeComprada = new Produto();

@@ -18,7 +18,7 @@ class Produto
         return $"Código: {ID}\nNome do produto: {NomeDoProduto}\nPreço: {PrecoDoProduto}\nQuantidade em Estoque: {QuantidadeNoEstoque}\n";
     }
 
-    //Método que mostra para o usuario todos os produtos que temos cadastrado
+    //Método que mostra para o usuário todos os produtos que temos cadastrado
     public void ListaDeProdutos()
     {
         Console.WriteLine("Os produtos atuais que temos no estoque são: ");
@@ -57,6 +57,7 @@ class Produto
         Console.WriteLine("2 - Para editar a quantidade em estoque");
         Console.Write("R: ");
         int escolha = int.Parse(Console.ReadLine());
+        
         //fluxo para verificar qual foi a escolha do usuário e direcionar ele adequadamente
         switch (escolha)
         {
@@ -94,7 +95,7 @@ class Produto
         novo.VoltarAoMenu();
     }
 
-    //método para Excluir algum produtos que temos cadastrado
+    //método para Excluir algum produto que temos cadastrado
     public void ExclusaoDeProdutos()
     {
         Console.WriteLine("Atualmente temos esses itens: \n");
